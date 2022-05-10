@@ -73,5 +73,5 @@ if __name__ == '__main__':
         result = {"name":"","cookie":cookie,"number":username,"password":password}
         print(result)
     except:
-            print("用户名或密码错误")
+            print("用户名或密码错误，请检查")
 
