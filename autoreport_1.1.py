@@ -83,14 +83,15 @@ def PostAll():
         PostHtml(Cookie, Name,i)
 
 def mission():
-    for a in range(100):
-        logging.info("开始上报 ，上报时间： %s" % time.strftime("%Y-%m-%d %H:%M:%S",time.gmtime()))
+    for a in range(999):
+        logging.info("开始上报")
         PostAll()
-        logging.info("上报结束，结束时间 %s" % time.strftime("%Y-%m-%d %H:%M:%S",time.gmtime()))
-        logging.info("程序将于12小时后再次执行，请等待……")
-        time.sleep(21600)
-        logging.info("当前时间："+ time.strftime("%Y-%m-%d %H:%M:%S",time.gmtime()) + "距离程序执行还有6小时，请等待……")
-        time.sleep(21600)
+        logging.info("上报结束")
+        logging.info("为防止上报失败，五分钟后将再次上报")
+        time.sleep(300)
+        PostAll()
+        logging.info("再次上报结束，程序将于12小时后再次上报")
+        time.sleep(42900)
 
 
 if __name__ == '__main__':
